@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('', include('eve_sso.urls')),
     path('', include('mailer.urls')),
     path('admin/', admin.site.urls),
 ]

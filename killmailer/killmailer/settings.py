@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import secrets
+from . import secrets
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'eve_sso',
+    'mailer'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'killmailer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,6 +128,50 @@ ESI_CLIENT = '0affcce6538e48d9b7ad05ec8ce56b37'
 
 ESI_SECRET = secrets.ESI_SECRET
 
-ESI_CALLBACK = 'http://localhost/callback'
+ESI_CALLBACK = 'http://127.0.0.1:8000/callback'
 
 ESI_LOGIN_SERVER = 'login.eveonline.com'
+
+#LOGGING
+LOG_LEVEL = "DEBUG" if DEBUG else "INFO"
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'default': {
+            'format': '%(asctime)s - %(levelname)s - %(name)s [%(threadName)s] %(module)s.%(funcName)s:%(lineno)d - %(message)s',
+        },
+    },
+    'handlers': {
+        'error-file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'log', 'error.log'),
+            'formatter': 'default',
+        },
+        'app-file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'log', 'application.log'),
+            'formatter': 'default',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['error-file'],
+            'level': 'WARNING',
+            'propagate': True,
+        },
+        'mailer': {
+            'handlers': ['app-file'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        },
+        'eve_sso': {
+            'handlers': ['app-file'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        },
+    },
+}

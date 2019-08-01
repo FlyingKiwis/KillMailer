@@ -1,0 +1,108 @@
+2019-08-01 16:31:26,978 - ERROR - util.esi [Thread-1] esi.__do_request:28 - An exception occured with a ESI call
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 23, in __do_request
+    result = await op.execute(**parameters)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 122, in execute
+    return await self.__call_esi_async(**kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 141, in __call_esi_async
+    raise last_ex
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 131, in __call_esi_async
+    return await self.__call(self.__session, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 186, in __call
+    async with session.get(url, params=query_parameters, headers=headers) as resp:
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 417, in _request
+    with timer:
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\helpers.py", line 568, in __enter__
+    raise RuntimeError('Timeout context manager should be used '
+RuntimeError: Timeout context manager should be used inside a task
+2019-08-01 16:31:27,003 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 10, in home
+    hr = asyncio.run(esi.is_hr())
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\runners.py", line 43, in run
+    return loop.run_until_complete(main)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 44, in is_hr
+    return false
+NameError: name 'false' is not defined
+2019-08-01 16:31:36,609 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000241B5911780>
+2019-08-01 16:34:14,528 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 11, in home
+    hr = loop.run_until_complete(esi.is_hr())
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 41, in is_hr
+    op = self.esi.get_operation("get_characters_character_id_roles")
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\esipysi.py", line 145, in get_operation
+    raise ValueError("Could not find an operation with the name '{}'".format(operation_id))
+ValueError: Could not find an operation with the name 'get_characters_character_id_roles'
+2019-08-01 16:35:09,375 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001F48E5E9D68>
+2019-08-01 16:39:24,467 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000253C13C32B0>
+2019-08-01 16:39:24,467 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000253C1BCE348>, 164663.64)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000253C13C33C8>
+2019-08-01 16:42:10,418 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000253C1597A90>
+2019-08-01 16:42:10,418 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000253C1823468>, 164829.593)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000253C1C3F7F0>
+2019-08-01 17:04:42,452 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002483745E278>
+2019-08-01 17:04:42,452 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000024837CA62E8>, 166181.625)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000002483745E5C0>
+2019-08-01 17:04:42,473 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view mailer.views.home didn't return an HttpResponse object. It returned None instead.
+2019-08-01 17:05:08,192 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001EA9E271400>
+2019-08-01 17:05:08,192 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001EA9EA282E8>, 166207.375)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001EA9E2718D0>
+2019-08-01 17:06:40,979 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000014C8A5E4710>
+2019-08-01 17:06:40,980 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000014C8AD52228>, 166300.156)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000014C8A5E4D68>
+2019-08-01 17:20:15,528 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 20, in home
+    r = request.get(zkurl)
+AttributeError: 'WSGIRequest' object has no attribute 'get'
+2019-08-01 17:20:25,515 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000028587729228>, 167114.687)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000028587072630>
+2019-08-01 17:24:22,217 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000203D4F60940>
+2019-08-01 17:24:22,218 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000203D57160A8>, 167360.812)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000203D4F600B8>

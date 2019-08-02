@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from . import secrets
+from . import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = secrets.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -124,13 +125,17 @@ STATIC_URL = '/static/'
 
 #ESI
 
-ESI_CLIENT = '0affcce6538e48d9b7ad05ec8ce56b37'
+ESI_CLIENT = env.ESI_CLIENT
 
 ESI_SECRET = secrets.ESI_SECRET
 
-ESI_CALLBACK = 'http://127.0.0.1:8000/callback'
+ESI_CALLBACK = env.ESI_CALLBACK
 
 ESI_LOGIN_SERVER = 'login.eveonline.com'
+
+#APP
+
+N_DAYS_BACKLOG = 3
 
 #LOGGING
 LOG_LEVEL = "DEBUG" if DEBUG else "INFO"

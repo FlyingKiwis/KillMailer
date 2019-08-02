@@ -1,0 +1,13 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<h1>Messages Sent</h1>
+{% if fake %}
+<p>This was a dry run - mails should be in your inbox</p>
+{% endif %}
+<ul>
+{% for msg in messages  %}
+<li>Mail to "{{msg.recipient_name}}" - {% if msg.sent %}Sent!{% else %}Failed :({% endif %}
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.conf import settings
 from util.esi import Esi
 import asyncio
 import requests
@@ -46,16 +47,16 @@ def send(request):
         print("no subject")
         return redirect('compose')
 
-    fake = False
-    if dryrun is not None:
-        fake = True
+    fake = True
+    if dryrun is None:
+        fake = False
     loop = asyncio.new_event_loop()
     esi = Esi(request, loop)
     asyncio.set_event_loop(loop)
-    results = loop.run_until_complete(send_mail(esi, kills, subject, body, True))
+    results = loop.run_until_complete(send_mail(esi, kills, subject, body, fake))
     esi.close()
     loop.close()
-    return HttpResponse("Done: {}".format(results))
+    return render(request, 'sent.html', {'messages':results,'fake':fake})
 
 async def load_info(esi):
     hr = await esi.is_hr()
@@ -69,8 +70,8 @@ async def load_info(esi):
     else:
         info["org_type"] = "corporation"
         info["org_id"] = await esi.get_corp_id()
-    yesterday = datetime.utcnow() - timedelta(days=1)
-    time_str = yesterday.strftime("%Y%m%d%H00")
+    start = datetime.utcnow() - timedelta(days=settings.N_DAYS_BACKLOG)
+    time_str = start.strftime("%Y%m%d%H00")
     template_url = "https://zkillboard.com/api/kills/{org_type}ID/{org_id}/startTime/{time}/"
     zkurl = template_url.format(org_type=info.get("org_type"), org_id=info.get("org_id"), time=time_str)
     r = requests.get(zkurl)
@@ -88,7 +89,6 @@ async def load_info(esi):
         kill_futures.append(esi.get_kill_info(kill_id,kill_hash))
     results = await asyncio.gather(*kill_futures)
     kill_info = []
-    org_futures = []
     for result in results:
         if result is not None:
             kill_info.append(result)
@@ -109,8 +109,10 @@ async def send_mail(esi, kills, subject, body, fake=False):
             recip = my_id
         else:
             recip = kill.get("victim_id")
-        mail_futures.append(esi.send_mail(recip, body_p, subject_p))
+        recip_name = kill.get("victim_name")
+        mail_futures.append(esi.send_mail(recip, recip_name, body_p, subject_p))
     return await asyncio.gather(*mail_futures)
+
 
 
 def replace_placeholders(text, kill_info):

@@ -153,7 +153,7 @@ class Esi():
         return org_info
                 
 
-    async def send_mail(self, recipient_id, body, subject):
+    async def send_mail(self, recipient_id, recipient_name, body, subject):
         #Form JSON
         recipients = []
         recipient_details = {}
@@ -170,8 +170,8 @@ class Esi():
         op = self.esi.get_operation("post_characters_character_id_mail")
         results = await self.__do_request(op, {"character_id":char_id, "mail":mail})
         if results is None:
-            return False
-        return True
+            return {"recipient_id":recipient_id,"recipient_name":recipient_name, "sent":False}
+        return {"recipient_id":recipient_id,"recipient_name":recipient_name, "sent":True}
 
 
 

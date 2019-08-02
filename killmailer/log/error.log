@@ -1,6 +1,6 @@
-2019-08-01 16:31:26,978 - ERROR - util.esi [Thread-1] esi.__do_request:28 - An exception occured with a ESI call
+2019-08-01 20:56:20,895 - ERROR - util.esi [Thread-1] esi.__do_request:36 - An exception occured with a ESI call
 Traceback (most recent call last):
-  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 23, in __do_request
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 31, in __do_request
     result = await op.execute(**parameters)
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 122, in execute
     return await self.__call_esi_async(**kwargs)
@@ -8,8 +8,8 @@ Traceback (most recent call last):
     raise last_ex
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 131, in __call_esi_async
     return await self.__call(self.__session, **kwargs)
-  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 186, in __call
-    async with session.get(url, params=query_parameters, headers=headers) as resp:
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 196, in __call
+    async with session.post(full_url, data=body, headers=headers) as resp:
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 1005, in __aenter__
     self._resp = await self._coro
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 417, in _request
@@ -17,7 +17,1270 @@ Traceback (most recent call last):
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\helpers.py", line 568, in __enter__
     raise RuntimeError('Timeout context manager should be used '
 RuntimeError: Timeout context manager should be used inside a task
-2019-08-01 16:31:27,003 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
+2019-08-01 20:56:20,896 - ERROR - util.esi [Thread-1] esi.__do_request:36 - An exception occured with a ESI call
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 31, in __do_request
+    result = await op.execute(**parameters)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 122, in execute
+    return await self.__call_esi_async(**kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 141, in __call_esi_async
+    raise last_ex
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 131, in __call_esi_async
+    return await self.__call(self.__session, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 196, in __call
+    async with session.post(full_url, data=body, headers=headers) as resp:
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 417, in _request
+    with timer:
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\helpers.py", line 568, in __enter__
+    raise RuntimeError('Timeout context manager should be used '
+RuntimeError: Timeout context manager should be used inside a task
+2019-08-01 20:58:42,686 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 20:58:42,689 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001836E0C2F28>
+2019-08-01 20:58:42,689 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001836E904948>, 180064.875), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E9A9FA8>, 180065.14), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E1820A8>, 180065.14), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E9A93A8>, 180065.156), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E182048>, 180065.203), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E9A96A8>, 180065.203), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E9A9828>, 180065.203), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E9A9528>, 180065.25), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E9A9F48>, 180065.296), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E182168>, 180065.578), (<aiohttp.client_proto.ResponseHandler object at 0x000001836E182108>, 180065.625)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001836E223D68>
+2019-08-01 20:58:42,689 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 20:58:42,689 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001836E0618D0>
+2019-08-01 20:58:42,689 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E0C2C50>
+transport: <_SelectorSocketTransport fd=1032>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,690 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E0C2C50>
+transport: <_SelectorSocketTransport closing fd=1032>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,691 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E76A0>
+transport: <_SelectorSocketTransport fd=1100>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,691 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E76A0>
+transport: <_SelectorSocketTransport closing fd=1100>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,691 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7748>
+transport: <_SelectorSocketTransport fd=1124>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,692 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7748>
+transport: <_SelectorSocketTransport closing fd=1124>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,692 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E1D4978>
+transport: <_SelectorSocketTransport fd=1112>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,692 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E1D4978>
+transport: <_SelectorSocketTransport closing fd=1112>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,693 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7518>
+transport: <_SelectorSocketTransport fd=148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,694 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7518>
+transport: <_SelectorSocketTransport closing fd=148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,694 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E79B0>
+transport: <_SelectorSocketTransport fd=1104>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,695 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E79B0>
+transport: <_SelectorSocketTransport closing fd=1104>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,696 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7128>
+transport: <_SelectorSocketTransport fd=1132>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,696 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7128>
+transport: <_SelectorSocketTransport closing fd=1132>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,697 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E71D0>
+transport: <_SelectorSocketTransport fd=1136>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,697 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E71D0>
+transport: <_SelectorSocketTransport closing fd=1136>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,698 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7048>
+transport: <_SelectorSocketTransport fd=1148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,698 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7048>
+transport: <_SelectorSocketTransport closing fd=1148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,698 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7AC8>
+transport: <_SelectorSocketTransport fd=1144>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,698 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7AC8>
+transport: <_SelectorSocketTransport closing fd=1144>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 20:58:42,699 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7A20>
+transport: <_SelectorSocketTransport fd=1140>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 20:58:42,699 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001836E2E7A20>
+transport: <_SelectorSocketTransport closing fd=1140>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:36,917 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 21:01:36,924 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022EF272DDA0>
+2019-08-01 21:01:36,925 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000022EF2ED08E8>, 180395.546), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D168>, 180395.796), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D1C8>, 180395.812), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF2947F48>, 180395.843), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D108>, 180395.843), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D2E8>, 180395.843), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D048>, 180395.859), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D348>, 180395.906), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF2947FA8>, 180395.968), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D0A8>, 180396.031), (<aiohttp.client_proto.ResponseHandler object at 0x0000022EF290D228>, 180396.093)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000022EF272D438>
+2019-08-01 21:01:42,725 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF2803240>
+transport: <_SelectorSocketTransport fd=1108>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,726 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF2803240>
+transport: <_SelectorSocketTransport closing fd=1108>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,727 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DEC50>
+transport: <_SelectorSocketTransport fd=1084>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,727 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DEC50>
+transport: <_SelectorSocketTransport closing fd=1084>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,728 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DEB70>
+transport: <_SelectorSocketTransport fd=1044>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,728 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DEB70>
+transport: <_SelectorSocketTransport closing fd=1044>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,728 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE828>
+transport: <_SelectorSocketTransport fd=1140>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,729 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE828>
+transport: <_SelectorSocketTransport closing fd=1140>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,729 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE320>
+transport: <_SelectorSocketTransport fd=1148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,729 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE320>
+transport: <_SelectorSocketTransport closing fd=1148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,730 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE550>
+transport: <_SelectorSocketTransport fd=1112>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,730 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE550>
+transport: <_SelectorSocketTransport closing fd=1112>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,730 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE630>
+transport: <_SelectorSocketTransport fd=1132>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,730 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE630>
+transport: <_SelectorSocketTransport closing fd=1132>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,731 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE518>
+transport: <_SelectorSocketTransport fd=1124>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,731 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DE518>
+transport: <_SelectorSocketTransport closing fd=1124>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:42,731 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DEE10>
+transport: <_SelectorSocketTransport fd=1136>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:01:42,731 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000022EF28DEE10>
+transport: <_SelectorSocketTransport closing fd=1136>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:49,943 - ERROR - util.esi [Thread-1] esi.__do_request:36 - An exception occured with a ESI call
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 31, in __do_request
+    result = await op.execute(**parameters)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 122, in execute
+    return await self.__call_esi_async(**kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 141, in __call_esi_async
+    raise last_ex
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 131, in __call_esi_async
+    return await self.__call(self.__session, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 196, in __call
+    async with session.post(full_url, data=body, headers=headers) as resp:
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 396, in _request
+    handle = tm.start()
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\helpers.py", line 521, in start
+    return self._loop.call_at(at, self.__call__)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 656, in call_at
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:49,944 - ERROR - util.esi [Thread-1] esi.__do_request:36 - An exception occured with a ESI call
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 31, in __do_request
+    result = await op.execute(**parameters)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 122, in execute
+    return await self.__call_esi_async(**kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 141, in __call_esi_async
+    raise last_ex
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 131, in __call_esi_async
+    return await self.__call(self.__session, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 196, in __call
+    async with session.post(full_url, data=body, headers=headers) as resp:
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 396, in _request
+    handle = tm.start()
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\helpers.py", line 521, in start
+    return self._loop.call_at(at, self.__call__)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 656, in call_at
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:49,995 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /send
 Traceback (most recent call last):
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -25,18 +1288,1088 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 10, in home
-    hr = asyncio.run(esi.is_hr())
-  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\runners.py", line 43, in run
-    return loop.run_until_complete(main)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 55, in send
+    esi.close()
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 21, in close
+    self.esi.close()
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\esipysi.py", line 90, in close
+    self.__loop.create_task(self.__session.close())
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 392, in create_task
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:01:51,513 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022EF2FC6400>
+2019-08-01 21:03:44,077 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 21:03:44,086 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001BA8DA96C88>
+2019-08-01 21:03:44,086 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001BA8E2738E8>, 180522.359), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCFAE88>, 180522.609), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCFAFA8>, 180522.625), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCF4048>, 180522.64), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCFAEE8>, 180522.656), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCF4228>, 180522.687), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCFAF48>, 180522.968), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCF4108>, 180523.0), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCF40A8>, 180523.125), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCF4168>, 180523.14), (<aiohttp.client_proto.ResponseHandler object at 0x000001BA8DCF41C8>, 180523.25)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001BA8DA96BA8>
+2019-08-01 21:03:49,318 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DCEF208>
+transport: <_SelectorSocketTransport fd=1084>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:03:49,321 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DCEF208>
+transport: <_SelectorSocketTransport closing fd=1084>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:03:49,323 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DD060B8>
+transport: <_SelectorSocketTransport fd=1148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:03:49,323 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DD060B8>
+transport: <_SelectorSocketTransport closing fd=1148>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:03:49,325 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DD062B0>
+transport: <_SelectorSocketTransport fd=1052>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:03:49,326 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DD062B0>
+transport: <_SelectorSocketTransport closing fd=1052>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:03:49,326 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DD06048>
+transport: <_SelectorSocketTransport fd=1152>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:03:49,326 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x000001BA8DD06048>
+transport: <_SelectorSocketTransport closing fd=1152>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:03:53,743 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /send
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 52, in send
+    esi = Esi(request, loop)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 14, in __init__
+    self.esi = EsiPysi("https://esi.evetech.net/_latest/swagger.json", loop=loop)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\esipysi.py", line 54, in __init__
+    self.__session = aiohttp.ClientSession(loop = self.__loop, connector=connector)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py", line 208, in __init__
+    "Session and connector has to use same event loop")
+RuntimeError: Session and connector has to use same event loop
+2019-08-01 21:12:01,610 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 21:12:01,619 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002221D7CF518>
+2019-08-01 21:12:01,619 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000002221DF428E8>, 181020.281), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E090048>, 181020.531), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E091FA8>, 181020.531), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E0900A8>, 181020.546), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E091F48>, 181020.562), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E090168>, 181020.656), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E091EE8>, 181020.671), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E0901C8>, 181020.671), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E090228>, 181020.718), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E091E88>, 181020.734), (<aiohttp.client_proto.ResponseHandler object at 0x000002221E090108>, 181020.781)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000002221D7CF7F0>
+2019-08-01 21:12:14,265 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:14,328 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:14,474 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:14,531 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:14,697 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:14,740 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:14,905 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:14,966 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:15,119 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:15,167 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:15,337 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:15,376 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+NoneType: None
+2019-08-01 21:12:15,463 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /send
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 31, in __do_request
+    result = await op.execute(**parameters)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 122, in execute
+    return await self.__call_esi_async(**kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 141, in __call_esi_async
+    raise last_ex
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 131, in __call_esi_async
+    return await self.__call(self.__session, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 197, in __call
+    return await self.__process_response(resp, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 210, in __process_response
+    raise exception
+urllib.error.HTTPError: HTTP Error 400: {"error":"Invalid body JSON type, 'mail' is required"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 54, in send
+    results = loop.run_until_complete(send_mail(esi, kills, subject, body, True))
   File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 573, in run_until_complete
     return future.result()
-  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 44, in is_hr
-    return false
-NameError: name 'false' is not defined
-2019-08-01 16:31:36,609 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x00000241B5911780>
-2019-08-01 16:34:14,528 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 111, in send_mail
+    return await asyncio.gather(*mail_futures)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 144, in send_mail
+    results = await self.__do_request(op, {"character_id":char_id, "mail":mail_json})
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 33, in __do_request
+    self.log.exception("An error ({}) occured with the ESI call \"{}\" with parameters: {}".format(result.status, op, parameters))
+UnboundLocalError: local variable 'result' referenced before assignment
+2019-08-01 21:19:23,363 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 21:19:23,371 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000021901C8A128>
+2019-08-01 21:19:23,371 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000219024746A8>, 181462.031), (<aiohttp.client_proto.ResponseHandler object at 0x0000021901D9E108>, 181462.328), (<aiohttp.client_proto.ResponseHandler object at 0x00000219025B8F48>, 181462.328), (<aiohttp.client_proto.ResponseHandler object at 0x0000021901D9E1C8>, 181462.343), (<aiohttp.client_proto.ResponseHandler object at 0x00000219025B8FA8>, 181462.343), (<aiohttp.client_proto.ResponseHandler object at 0x0000021901D9E168>, 181462.343), (<aiohttp.client_proto.ResponseHandler object at 0x0000021901D9E228>, 181462.343), (<aiohttp.client_proto.ResponseHandler object at 0x0000021901D9E048>, 181462.359), (<aiohttp.client_proto.ResponseHandler object at 0x00000219025B8528>, 181462.359), (<aiohttp.client_proto.ResponseHandler object at 0x00000219025B86A8>, 181462.359), (<aiohttp.client_proto.ResponseHandler object at 0x0000021901D9E0A8>, 181462.546)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000021901C8A4A8>
+2019-08-01 21:19:26,065 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901F08208>
+transport: <_SelectorSocketTransport fd=1096>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,066 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901F08208>
+transport: <_SelectorSocketTransport closing fd=1096>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,067 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA2B0>
+transport: <_SelectorSocketTransport fd=1100>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,067 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA2B0>
+transport: <_SelectorSocketTransport closing fd=1100>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,068 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901E17358>
+transport: <_SelectorSocketTransport fd=1088>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,068 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901E17358>
+transport: <_SelectorSocketTransport closing fd=1088>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,068 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBAEB8>
+transport: <_SelectorSocketTransport fd=1124>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,069 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBAEB8>
+transport: <_SelectorSocketTransport closing fd=1124>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,069 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA278>
+transport: <_SelectorSocketTransport fd=1108>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,069 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA278>
+transport: <_SelectorSocketTransport closing fd=1108>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,069 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA4E0>
+transport: <_SelectorSocketTransport fd=1140>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,070 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA4E0>
+transport: <_SelectorSocketTransport closing fd=1140>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,070 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBADD8>
+transport: <_SelectorSocketTransport fd=1128>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,070 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBADD8>
+transport: <_SelectorSocketTransport closing fd=1128>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,071 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA048>
+transport: <_SelectorSocketTransport fd=1112>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,071 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA048>
+transport: <_SelectorSocketTransport closing fd=1112>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,071 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA2E8>
+transport: <_SelectorSocketTransport fd=1136>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,071 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBA2E8>
+transport: <_SelectorSocketTransport closing fd=1136>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:26,072 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal write error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBAE80>
+transport: <_SelectorSocketTransport fd=1132>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+2019-08-01 21:19:26,072 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x0000021901DBAE80>
+transport: <_SelectorSocketTransport closing fd=1132>
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 733, in __hash__
+    return self._hash
+AttributeError: _hash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\pathlib.py", line 721, in _cparts
+    return self._cached_cparts
+AttributeError: _cached_cparts
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 868, in write
+    n = self._sock.send(data)
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\sslproto.py", line 676, in _process_write_backlog
+    self._transport.write(chunk)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 872, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 681, in _fatal_error
+    self._force_close(exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\selector_events.py", line 693, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 677, in call_soon
+    self._check_closed()
+  File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 469, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+2019-08-01 21:19:36,712 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 21:19:36,714 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000219025716D8>
+2019-08-01 21:19:36,714 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000021902162D08>, 181475.859), (<aiohttp.client_proto.ResponseHandler object at 0x0000021902162D68>, 181475.89)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000219025718D0>
+2019-08-01 21:26:51,279 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 21:26:51,290 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000284DBF4A048>
+2019-08-01 21:26:51,290 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000284DC723DC8>, 181909.953), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E648>, 181910.234), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E5E8>, 181910.234), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E6A8>, 181910.25), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E528>, 181910.265), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E708>, 181910.265), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E7C8>, 181910.281), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E768>, 181910.281), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E828>, 181910.296), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E588>, 181910.406), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC05E888>, 181910.453)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000284DBF4A278>
+2019-08-01 21:27:56,746 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 21:27:56,748 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000284DC756C50>
+2019-08-01 21:27:56,748 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000284DC547228>, 181975.906), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC547288>, 181975.906), (<aiohttp.client_proto.ResponseHandler object at 0x00000284DC5472E8>, 181975.921)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000284DC756550>
+2019-08-01 21:58:31,114 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,280 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,288 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,308 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,338 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,372 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[1000168]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,396 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98603553, 99008704]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,411 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,420 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,441 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,486 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,492 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[297222644]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,511 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,561 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,577 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[1000168]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,590 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,598 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98603553, 99008704]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,622 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,623 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,625 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,665 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,708 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[297222644]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,713 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,715 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,760 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,778 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[1000168]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,802 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,804 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98603553, 99008704]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,824 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,825 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,851 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,876 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,918 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[297222644]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,920 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,921 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,983 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:31,993 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[1000168]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,013 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98603553, 99008704]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,017 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,029 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,032 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,073 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,092 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,126 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,128 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[297222644]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,156 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,189 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,210 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[1000168]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,226 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98603553, 99008704]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,227 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,227 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,229 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98600521, 99009160]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,291 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98537615, 1354830081]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,292 - ERROR - util.esi [Thread-1] esi.__do_request:33 - An error occured with the ESI call "post_universe_names" with parameters: {'ids': [[98579500]]}
+Traceback (most recent call last):
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 31, in __do_request
+    result = await op.execute(**parameters)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 122, in execute
+    return await self.__call_esi_async(**kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 141, in __call_esi_async
+    raise last_ex
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 131, in __call_esi_async
+    return await self.__call(self.__session, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 197, in __call
+    return await self.__process_response(resp, **kwargs)
+  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\op.py", line 210, in __process_response
+    raise exception
+urllib.error.HTTPError: HTTP Error 400: {"error":"failed to coerce value '[98579500]' into type integer (format: int32), 'ids' is required"}
+2019-08-01 21:58:32,292 - ERROR - EsiPysi [Thread-1] op.__process_response:209 - ESI HTTP error occured: HTTP Error 400: {"error":"failed to coerce value '[98118675]' into type integer (format: int32), 'ids' is required"}
+NoneType: None
+2019-08-01 21:58:32,325 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
 Traceback (most recent call last):
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
     response = get_response(request)
@@ -44,65 +2377,28 @@ Traceback (most recent call last):
     response = self.process_exception_by_middleware(e, request)
   File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 11, in home
-    hr = loop.run_until_complete(esi.is_hr())
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 15, in home
+    info = loop.run_until_complete(load_info(esi))
   File "C:\Users\Drew\AppData\Local\Programs\Python\Python37\lib\asyncio\base_events.py", line 573, in run_until_complete
     return future.result()
-  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 41, in is_hr
-    op = self.esi.get_operation("get_characters_character_id_roles")
-  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\esipysi\esipysi.py", line 145, in get_operation
-    raise ValueError("Could not find an operation with the name '{}'".format(operation_id))
-ValueError: Could not find an operation with the name 'get_characters_character_id_roles'
-2019-08-01 16:35:09,375 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x000001F48E5E9D68>
-2019-08-01 16:39:24,467 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x00000253C13C32B0>
-2019-08-01 16:39:24,467 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
-connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000253C1BCE348>, 164663.64)]']
-connector: <aiohttp.connector.TCPConnector object at 0x00000253C13C33C8>
-2019-08-01 16:42:10,418 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x00000253C1597A90>
-2019-08-01 16:42:10,418 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
-connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000253C1823468>, 164829.593)]']
-connector: <aiohttp.connector.TCPConnector object at 0x00000253C1C3F7F0>
-2019-08-01 17:04:42,452 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x000002483745E278>
-2019-08-01 17:04:42,452 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
-connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000024837CA62E8>, 166181.625)]']
-connector: <aiohttp.connector.TCPConnector object at 0x000002483745E5C0>
-2019-08-01 17:04:42,473 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
-Traceback (most recent call last):
-  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
-    "returned None instead." % (callback.__module__, view_name)
-ValueError: The view mailer.views.home didn't return an HttpResponse object. It returned None instead.
-2019-08-01 17:05:08,192 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x000001EA9E271400>
-2019-08-01 17:05:08,192 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
-connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001EA9EA282E8>, 166207.375)]']
-connector: <aiohttp.connector.TCPConnector object at 0x000001EA9E2718D0>
-2019-08-01 17:06:40,979 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x0000014C8A5E4710>
-2019-08-01 17:06:40,980 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
-connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000014C8AD52228>, 166300.156)]']
-connector: <aiohttp.connector.TCPConnector object at 0x0000014C8A5E4D68>
-2019-08-01 17:20:15,528 - ERROR - django.request [Thread-1] log.log_response:228 - Internal Server Error: /home
-Traceback (most recent call last):
-  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
-    response = get_response(request)
-  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
-    response = self.process_exception_by_middleware(e, request)
-  File "C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 20, in home
-    r = request.get(zkurl)
-AttributeError: 'WSGIRequest' object has no attribute 'get'
-2019-08-01 17:20:25,515 - ERROR - asyncio [MainThread] base_events.default_exception_handler:1597 - Unclosed connector
-connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000028587729228>, 167114.687)]']
-connector: <aiohttp.connector.TCPConnector object at 0x0000028587072630>
-2019-08-01 17:24:22,217 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x00000203D4F60940>
-2019-08-01 17:24:22,218 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
-connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000203D57160A8>, 167360.812)]']
-connector: <aiohttp.connector.TCPConnector object at 0x00000203D4F600B8>
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\mailer\views.py", line 89, in load_info
+    results = await asyncio.gather(*kill_futures)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 111, in get_kill_info
+    org_info = await self.get_org_info(char_id)
+  File "C:\Users\Drew\Code\Projects\Killmailer\killmailer\util\esi.py", line 144, in get_org_info
+    for result in results:
+TypeError: 'NoneType' object is not iterable
+2019-08-01 22:00:44,360 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 22:00:44,378 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002EA1A856160>
+2019-08-01 22:00:44,378 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000002EA1B012948>, 183943.109), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1A91EE88>, 183943.281), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1A91EEE8>, 183943.296), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1A91EFA8>, 183943.328), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1B15A1C8>, 183943.328), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1A91EF48>, 183943.328), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1B15A108>, 183943.343), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1B15A0A8>, 183943.359), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1B15A048>, 183943.39), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1B15A168>, 183943.531)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000002EA1A8562E8>
+2019-08-01 22:03:12,666 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Task was destroyed but it is pending!
+task: <Task pending coro=<ClientSession.close() running at C:\Users\Drew\Code\Projects\Killmailer\lib\site-packages\aiohttp\client.py:893>>
+2019-08-01 22:03:12,668 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002EA1AAB1390>
+2019-08-01 22:03:12,668 - ERROR - asyncio [Thread-1] base_events.default_exception_handler:1597 - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000002EA1AD0D348>, 184091.718), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1AD0D2E8>, 184091.796), (<aiohttp.client_proto.ResponseHandler object at 0x000002EA1AD0D3A8>, 184091.843)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000002EA1AAB1048>

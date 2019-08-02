@@ -1,0 +1,37 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="{% url 'compose' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-info">Compose</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Victim Name</th>
+                    <th scope="col">Killmail</th>
+                    <th scope="col">Corporation</th>
+                    <th scope="col">Alliance</th>
+                    <th scope="col">Send Mail?</th>
+                </tr>
+            </thead>
+            {% for kill in kills %}
+            <tr>
+                <td><img src="https://image.eveonline.com//Type/{{kill.victim_ship_id}}_64.png" alt="{{kill.victim_ship}}"/></td>
+                <td><a href="https://zkillboard.com/character/{{kill.victim_id}}/" target="_blank">{{kill.victim_name}}</a></td>
+                <td><a href="https://zkillboard.com/kill/{{kill.id}}/" target="_blank">{{kill.victim_name}} - {{kill.victim_ship}}</a></td>
+                <td><a href="https://zkillboard.com/corporation/{{kill.victim_orgs.corporation_id}}/" target="_blank">{{kill.victim_orgs.corporation_name}}</a></td>
+                <td>
+                    {% if kill.victim_orgs.alliance_id %}
+                    <a href="https://zkillboard.com/alliance/{{kill.victim_orgs.alliance_id}}/" target="_blank">{{kill.victim_orgs.alliance_name}}</a>
+                    {% endif %}
+                </td>
+                <td><input class="form-check-input" type="checkbox" value="{{kill.id}}" name="send-mail" id="kill-{{kill.id}}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button type="submit" class="btn btn-info">Compose</button>
+    </form>
+</div>
+{% endblock %}

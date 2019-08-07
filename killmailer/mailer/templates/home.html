@@ -19,7 +19,10 @@
             <tr>
                 <td><img src="https://image.eveonline.com//Type/{{kill.victim_ship_id}}_64.png" alt="{{kill.victim_ship}}"/></td>
                 <td><a href="https://zkillboard.com/character/{{kill.victim_id}}/" target="_blank">{{kill.victim_name}}</a></td>
-                <td><a href="https://zkillboard.com/kill/{{kill.id}}/" target="_blank">{{kill.victim_name}} - {{kill.victim_ship}}</a></td>
+                <td>
+                    <p><a href="https://zkillboard.com/kill/{{kill.id}}/" target="_blank">{{kill.victim_name}} - {{kill.victim_ship}}</a></p>
+                    <p>{{kill.kill_time}}</p>
+                </td>
                 <td><a href="https://zkillboard.com/corporation/{{kill.victim_orgs.corporation_id}}/" target="_blank">{{kill.victim_orgs.corporation_name}}</a></td>
                 <td>
                     {% if kill.victim_orgs.alliance_id %}

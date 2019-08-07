@@ -117,10 +117,11 @@ class Esi():
         if ship_id is None:
             print("ship name is none")
             return None
+        kill_time = results.get("killmail_time","")
         char_name = await self.get_character_name(char_id)
         ship_name = await self.get_type_name(ship_id)
         org_info = await self.get_org_info(char_id)
-        details = {"id": kill_id, "hash":kill_hash,"victim_name":char_name,"victim_id":char_id,"victim_ship":ship_name, "victim_ship_id":ship_id,"victim_orgs":org_info}
+        details = {"id": kill_id, "hash":kill_hash,"victim_name":char_name,"victim_id":char_id,"victim_ship":ship_name, "victim_ship_id":ship_id,"victim_orgs":org_info,"kill_time":kill_time}
         return details
 
     async def get_character_name(self, character_id):

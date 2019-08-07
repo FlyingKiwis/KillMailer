@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <h1>Sending Messages</h1>
+    {% if batch.fake %}
+    <p>This is a dry run - mails should be in your inbox</p>
+    {% endif %}
+    <p>This may take a while (due to CCP spam detection) but don't worry you can close this page and it will still complete</p>
+    <p>If you want to come back for results check <a href="{% url 'sent' batch=batch.pk %}">this page</a></p>
+    <div class="progress">
+    <div id="loading" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+    $(function() {
+        setInterval(get_status, 500)
+
+    function get_status()
+    {
+        $.ajax('{% url 'task-status' id=task.id hash=task.hash %}')
+        .done(function(data){
+            var progress = data.progress * 100;
+            $("#loading").attr('aria-valuenow', progress).css('width', progress + '%');
+            if(data.status == "Complete")
+            {
+                window.location.replace('{% url 'sent' batch=batch.pk %}');
+            }
+        });
+    } 
+    });
+    </script>
+{% endblock js %}

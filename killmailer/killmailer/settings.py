@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from . import secrets
 from . import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secrets.SECRET_KEY
+SECRET_KEY = env.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.DEBUG
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'eve_sso',
+    'taskWorkers',
     'mailer'
 ]
 
@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 
 ESI_CLIENT = env.ESI_CLIENT
 
-ESI_SECRET = secrets.ESI_SECRET
+ESI_SECRET = env.ESI_SECRET
 
 ESI_CALLBACK = env.ESI_CALLBACK
 
@@ -174,6 +174,11 @@ LOGGING = {
             'propagate': True,
         },
         'eve_sso': {
+            'handlers': ['app-file'],
+            'level': LOG_LEVEL,
+            'propagate': True,
+        },
+        'taskWorkers': {
             'handlers': ['app-file'],
             'level': LOG_LEVEL,
             'propagate': True,

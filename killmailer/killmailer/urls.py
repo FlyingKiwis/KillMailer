@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('eve_sso.urls')),
     path('', include('mailer.urls')),
+    path('tasks/',include('taskWorkers.urls')),
     path('admin/', admin.site.urls),
 ]

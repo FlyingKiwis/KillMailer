@@ -1,12 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.conf import settings
 from util.esi import Esi
 import asyncio
 import requests
 from datetime import datetime, timedelta
+from taskWorkers.worker import Worker
 import json
 import re
+from .mailer import Mailer
+from .models import Batch, Message
     
 
 def home(request):
@@ -50,13 +53,17 @@ def send(request):
     fake = True
     if dryrun is None:
         fake = False
-    loop = asyncio.new_event_loop()
-    esi = Esi(request, loop)
-    asyncio.set_event_loop(loop)
-    results = loop.run_until_complete(send_mail(esi, kills, subject, body, fake))
-    esi.close()
-    loop.close()
-    return render(request, 'sent.html', {'messages':results,'fake':fake})
+    
+    batch = Batch(subject=subject, body=body, fake=fake)
+    batch.save()
+
+    mailer = Mailer(request, kills, batch)
+
+    return render(request, 'sending.html', {'task':mailer.worker, 'batch':batch})
+
+def sent(request, batch):
+    batch_obj = get_object_or_404(Batch, pk=batch)
+    return render(request, 'sent.html', {'batch':batch_obj})
 
 async def load_info(esi):
     hr = await esi.is_hr()
@@ -96,37 +103,10 @@ async def load_info(esi):
             print("result is none")
     return kill_info
 
-async def send_mail(esi, kills, subject, body, fake=False):
-    mail_futures = []
-    my_id = None
-    if fake:
-        my_id = await esi.get_char_id()
-    for kill in kills:
-        body_p = replace_placeholders(body, kill)
-        subject_p = replace_placeholders(subject, kill)
-        recip = None
-        if fake:
-            recip = my_id
-        else:
-            recip = kill.get("victim_id")
-        recip_name = kill.get("victim_name")
-        mail_futures.append(esi.send_mail(recip, recip_name, body_p, subject_p))
-    return await asyncio.gather(*mail_futures)
 
 
 
-def replace_placeholders(text, kill_info):
-    name = kill_info.get("victim_name")
-    ship = kill_info.get("victim_ship")
-    kill_id = kill_info.get("id")
-    kill_hash = kill_info.get("hash")
-    killmail = "<url=killReport:{id}:{hash}>Kill: {name} - {ship}</url>".format(id=kill_id, hash=kill_hash, name=name, ship=ship)
 
-    replaced = re.sub(r'%name%', name, text)
-    replaced = re.sub(r'%ship%', ship, replaced)
-    replaced = re.sub(r'%killmail%', killmail, replaced)
-
-    return replaced
 
 
 

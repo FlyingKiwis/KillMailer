@@ -13,6 +13,7 @@ class Esi():
         self.auth = EsiAuth(settings.ESI_CLIENT, settings.ESI_SECRET, access, refresh, None)
         self.esi = EsiPysi("https://esi.evetech.net/_latest/swagger.json", loop=loop)
         self.char_id = None
+        self.char_name = None
         self.corp_id = None
         self.alliance_id = None
         self.in_alliance = None
@@ -45,7 +46,17 @@ class Esi():
             return self.char_id
         verify = await self.auth.verify()
         self.char_id = verify.get("CharacterID")
+        self.char_name = verify.get("CharacterName")
         return self.char_id
+
+    async def get_char_name(self):
+        if self.char_name is not None:
+            return self.char_name
+        verify = await self.auth.verify()
+        self.char_id = verify.get("CharacterID")
+        self.char_name = verify.get("CharacterName")
+        return self.char_id
+
 
     async def is_hr(self):
         char_id = await self.get_char_id()
@@ -170,8 +181,8 @@ class Esi():
         op = self.esi.get_operation("post_characters_character_id_mail")
         results = await self.__do_request(op, {"character_id":char_id, "mail":mail})
         if results is None:
-            return {"recipient_id":recipient_id,"recipient_name":recipient_name, "sent":False}
-        return {"recipient_id":recipient_id,"recipient_name":recipient_name, "sent":True}
+            return {"sent":False, "error":self.last_error}
+        return {"sent":True}
 
 
 

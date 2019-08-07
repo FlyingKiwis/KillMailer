@@ -1,7 +1,6 @@
 {% extends 'master.html' %}
 
 {% block content %}
-<div class="container">
     <form method="POST" action="{% url 'compose' %}">
         {% csrf_token %}
         <button type="submit" class="btn btn-info">Compose</button>
@@ -33,5 +32,12 @@
         </table>
         <button type="submit" class="btn btn-info">Compose</button>
     </form>
-</div>
+{% endblock %}
+
+{% block css %}
+.form-check-input
+{
+    height:2em;
+    width:2em;
+}
 {% endblock %}

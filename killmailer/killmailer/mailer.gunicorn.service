@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+Requires=scan.gunicorn.socket
+After=network.target
+
+[Service]
+PIDFile=/apps/killmailer/app/killmailer/run/gunicorn.pid
+User=nginx
+Group=www-data
+WorkingDirectory=/apps/killmailer/app/killmailer
+ExecStart=/apps/killmailer/bin/gunicorn  -c /apps/killmailer/app/killmailer/killmailer/gunicorn.py killmailer.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

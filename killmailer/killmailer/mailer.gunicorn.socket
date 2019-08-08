@@ -1,0 +1,8 @@
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/apps/killmailer/app/killmailer/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
